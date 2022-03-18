@@ -18,15 +18,9 @@
     }
   },
   "0.1.3": {
-    "hash": "/ipfs/QmVqXAKY5Hqzc4fEmGR8zMMPoxCDiMsVzBYJ7F8tUqmK1u",
+    "hash": "/ipfs/QmZK5eptuQiRqX18QMwphxUd15DP2BsxF19Y5he149pr2s",
     "uploadedTo": {
-      "dappnode": "Wed, 26 Jan 2022 12:10:16 GMT"
-    }
-  },
-  "0.1.5": {
-    "hash": "/ipfs/QmZ8ScTCA8msv47zhpcGVoyJc5wCZ42R9Z77quRU6S5TGL",
-    "uploadedTo": {
-      "dappnode": "Wed, 26 Jan 2022 13:12:22 GMT"
+      "dappnode": "Sun, 18 Jul 2021 12:12:16 GMT"
     }
   }
 }
