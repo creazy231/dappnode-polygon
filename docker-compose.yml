@@ -18,21 +18,24 @@ services:
       - rabbitmq
     environment:
       - MONIKER=
-      - SNAPSHOT_URL=https://matic-blockchain-snapshots.s3-accelerate.amazonaws.com/matic-mainnet/heimdall-snapshot-pre-v0.2.8hardfork2022-03-17.tar.gz
+      - >-
+        SNAPSHOT_URL=https://matic-blockchain-snapshots.s3-accelerate.amazonaws.com/matic-mainnet/heimdall-snapshot-pre-v0.2.8hardfork2022-03-17.tar.gz
       - BOOTSTRAP=1
-      - ETH1_RPC_URL=http://fullnode.dappnode:8545
+      - "ETH1_RPC_URL=http://fullnode.dappnode:8545"
       - BOOTNODES=
     restart: unless-stopped
+    image: "heimdalld.polygon.public.dappnode.eth:0.2.0"
   heimdallr:
     environment:
       - REST_SERVER=1
-      - ETH1_RPC_URL=http://fullnode.dappnode:8545
+      - "ETH1_RPC_URL=http://fullnode.dappnode:8545"
     build: *ref_0
     volumes:
       - "heimdall:/root/.heimdalld"
     depends_on:
       - heimdalld
     restart: unless-stopped
+    image: "heimdallr.polygon.public.dappnode.eth:0.2.0"
   bor:
     build:
       args:
@@ -40,7 +43,8 @@ services:
       context: ./build/bor
       dockerfile: Dockerfile
     environment:
-      - SNAPSHOT_URL=https://matic-blockchain-snapshots.s3-accelerate.amazonaws.com/matic-mainnet/bor-pruned-snapshot-2022-03-13.tar.gz
+      - >-
+        SNAPSHOT_URL=https://matic-blockchain-snapshots.s3-accelerate.amazonaws.com/matic-mainnet/bor-pruned-snapshot-2022-03-13.tar.gz
       - BOOTSTRAP=1
       - MAXPEERS=
     volumes:
@@ -51,7 +55,8 @@ services:
     depends_on:
       - heimdallr
     restart: unless-stopped
+    image: "bor.polygon.public.dappnode.eth:0.2.0"
 volumes:
-  rabbitmq: []
+  rabbitmq: {}
   heimdall: {}
   bor: {}

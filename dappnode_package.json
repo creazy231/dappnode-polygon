@@ -20,6 +20,7 @@
   "globalEnvs": {
     "all": true
   },
+  "architectures": ["linux/amd64"],
   "backup": [
   ],
   "exposable": [
